@@ -1,3 +1,5 @@
+# Intermediate phase
+
 # OCaml
 
 *.annot
@@ -36,7 +38,6 @@ setup.log
 *-converted-to.*
 *.ps
 *.eps
-*.pdf
 *.bbl
 *.bcf
 *.blg
