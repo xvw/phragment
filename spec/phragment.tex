@@ -9,6 +9,7 @@
 \usepackage{pdfpages}
 
 \newcommand{\etal}{\textit{et al.}}
+\newcommand{\ahref}[3][blue]{\href{#2}{\color{#1}{#3}}}
 
 \title{
   \includegraphics[width=2cm]{../iconography/phragment-black.png}\\
@@ -57,39 +58,35 @@
   \\
 \end{abstract}
 
-% \section*{Dans le monde des sites statiques}
+Pour faciliter l'hébergement de ma page personnelle, j'ai fais le choix d'utiliser un
+système de génération statique. Même si la génération de site statique couvre une
+grande partie de mes besoins, je trouvais ça amusant d'avoir un espace de
+commentaires en dessous de chacun de mes articles. Pour enrichir une collection de
+pages statiques de fonctionnalités dynamiques, une approche commune est de passer
+par un tier. Soit via un greffon, comme \ahref{https://disqus.com/}{Disqus}, soit
+via l'invitation explicite à changer d'emplacement, proposant un espace de discussion
+sur un fil \ahref{https://www.reddit.com/}{Reddit},
+\ahref{https://news.ycombinator.com/}{Hacker news} ou autre service apparent.\\
+Pour ma page personnelle, j'ai utilisé Disqus. Bien que le service soit relativement
+bien pensé (et offre une UI suffisamment générique pour s'intégrer dans beaucoup
+d'interfaces graphiques), le service souffre tout de même (de manière assez
+subjective) de plusieurs soucis:\\
 
-En tant que développeur, l'utilisation d'un système de génération de page en
-amont apporte généralement plusieurs bienfaits, par exemple, la génération
-des pages ne reposant sur aucune mécanique dynamique exposée au client,
-on diminue la maintenance sécuritaire de cette application web.
-Pour ma part, les avantages majeurs de cette approche est que je peux très
-facilement héberger ma page personnelle sur des hébergeurs qui ne servent
-que des fichiers statiques, et je suis assez libre des technologies que je
-peux utiliser pour construire ma page, en amont, libéré de toute contraintes
-d'hébergement. De plus, le flot de développement et de publication est
-généralement très commode pour un développeur. On peut rédiger dans son
-éditeur favoris, utilisant un format de \textit{markup} libre et rendant le
-versionnement du code et de l'application assez simplement via des
-gestionnaires de versions classiques, avec une séparation claire entre la
-structure du document et son contenu.
-\\~\\
-Cependant, l'absence de mécanique dynamique restreint le champ des possibles.
-Il est, par exemple, bien plus complexe de mettre en place de l'interactivité
-partagée avec les utilisateurs de l'application. Dès lors que l'on construit
-un blog, la mise en place de commentaires sur les publications implique
-plus de travail. On pourrait résumer les opportunités d'interactivité en
-trois méthodes : \\
 \begin{itemize}
-\item implantation d'un minimum dynamique ;
-\item utilisation d'un tiers ;
-\item invitation à la participation sur le code directement.
+\item le service centralise tous les commentaires ;
+\item le mainteneur du site n'a pas de contrôle sur le cercle communautaire mis en place ;
+\item aucune personnalisation réelle envisageable ;
+\item l'outils est propriétaire et on ne dispose pas d'outils pour comprendre à quelles
+  fins sont utilisées les données.\\
 \end{itemize}
 
-\subsection*{L'interaction au moyen de tiers}
+L'ensemble de ces soucis m'ont amené à réfléchir à une autre solution pour le développement
+de Planet\cite{planet}, la platforme (en devenir) que je développe pour la refonte
+de mon espace personnel sur internet.
 
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{phragment.bib}
 
 \end{document}
+
